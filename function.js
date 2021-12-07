@@ -1,18 +1,21 @@
-function count(){
-    let num1 = document.getElementById("num1").value;
-    let num2 = document.getElementById("num2").value;
-    let operator = document.getElementById("xd").value;
-
-    let result = document.getElementById("result");
-
-    if(operator == "+"){
-        result.innerHTML = Number(num1) + Number(num2);
-    }else if(operator == "-"){
-        result.innerHTML = Number(num1) - Number(num2);
-    }else if(operator == "÷"){
-        result.innerHTML = Number(num1) / Number(num2);
+console.log("Funguju!")
+const buttons = document.querySelectorAll("button");
+const display = document.querySelector("display");
+buttons.forEach(function (button) 
+{
+    button.addEventListener("click", calculate);
+});
+function calculate(event) {
+    const clickedButtonValue = event.target.value;
+    if (clickedButtonValue === "=") {
+        if (display.value !== "") {
+            display.value = eval(display.value)
+        }
     }
-    else if(operator == "×"){
-        result.innerHTML = Number(num1) * Number(num2);
+    else if (clickedButtonValue === "C") {
+        display.value = "";
+    }
+    else {
+        display.value += clickedButtonValue;
     }
 }
