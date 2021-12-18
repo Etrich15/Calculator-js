@@ -1,22 +1,19 @@
-console.log("Funguju!")
-const buttons = document.querySelectorAll("button");
-const display = document.querySelector(".display");
-
-buttons.forEach(function (button)
+console.log("jo")
+function clearScreen() 
 {
-    button.addEventListener("click", calculate);
-});
-function calculate(event) {
-    const clickedButtonValue = event.target.value;
-    if (clickedButtonValue === "=") {
-        if (display.value !== "") {
-            display.value = eval(display.value)
-        }
-    }
-    else if (clickedButtonValue === "C") {
-        display.value = "";
-    }
-    else {
-        display.value += clickedButtonValue;
-    }
-}
+    document.getElementById("result").value = "";
+   }
+   function display(value) 
+   {
+    document.getElementById("result").value += value;
+   }
+   function calculate() 
+   {
+    var p = document.getElementById("result").value;
+    var q = eval(p);
+    document.getElementById("result").value = q;
+   }
+   function n()
+   {
+    document.getElementById("result").value *= -1;
+   }
