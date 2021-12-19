@@ -10,18 +10,17 @@
 <body>
   <table class="calculator">
     <input class="display" type="text" id="result" disabled /> </td>
-    <input class="button" type="button" value="C" onclick="clearScreen()"/>
     <tr>
-      <td> <input class="button" type="button" value="%" onclick="i()" /> </td>
-      <td> <input class="button" type="button" value="0" onclick="display('0')" /> </td>
-      <td> <input class="button" type="button" value="." onclick="display('.')" /> </td>
-      <td> <input class="button" type="button" value="=" onclick="calculate()" /> </td>
+      <td> <input class="button" type="button" value="%" onclick="display()" /> </td>
+      <td> <input class="button" type="button" value="CE" onclick="cclearScreen('CE')" /> </td>
+      <td> <input class="button" type="button" value="C" onclick="clearScreen()" /> </td>
+      <td> <input class="button" type="button" value="DE" onclick="ccclearScreen()" /> </td>
     </tr>
     <tr>
-      <td> <input class="button" type="button" value="+/-" onclick="n()" /> </td>
-      <td> <input class="button" type="button" value="0" onclick="display('0')" /> </td>
-      <td> <input class="button" type="button" value="." onclick="display('.')" /> </td>
-      <td> <input class="button" type="button" value="=" onclick="calculate()" /> </td>
+      <td> <input class="button" type="button" value="1/x" onclick="idk()" /> </td>
+      <td> <input class="button" type="button" value="x²" onclick="x2()" /> </td>
+      <td> <input class="button" type="button" value="√" onclick="sqrt()" /> </td>
+      <td> <input class="button" type="button" value="/" onclick="display('/')" /> </td>
     </tr>
     <tr>
       <td> <input class="button" type="button" value="1" onclick="display('1')" /> </td>
