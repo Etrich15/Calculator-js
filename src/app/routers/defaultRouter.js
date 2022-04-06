@@ -5,6 +5,4 @@ const router = express.Router();
 
 router.get(['/', '/index', '/index.html'], controller.index);
 
-router.get('*', controller.error);
-
 module.exports = router;

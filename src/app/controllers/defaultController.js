@@ -1,5 +1,5 @@
 exports.index = (req, res) => {
-    res.render('default/index', {
+    res.render('index.ejs', {
         title: 'Calculator'
     });
 }
