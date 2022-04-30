@@ -8,6 +8,10 @@ exports.loginPost = (req, res) => {
     const name = req.body.name.trim();
     const password = req.body.password.trim();
     const usersAll = user.loadUsers();
+
+    if(password.length == 0 || req.session.gipsi) {
+        return res.redirect("/user/login");
+    }
     for(let i in usersAll) {
         if(usersAll[i].name == name && usersAll[i].password == password);
         console.log(usersAll[i].name);
@@ -33,5 +37,6 @@ exports.registerPost = (req, res) => {
 }
 
 exports.logoutPost = (req, res) => {
-    
+    req.session.gipsi = false;
+    res.redirect('/');
 }
