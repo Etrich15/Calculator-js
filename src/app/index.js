@@ -9,7 +9,7 @@ app.set('views', 'app/views');
 
 
 app.use(session({
-    secret: config.sessionSecret,
+    secret: "secret",
     resave: true,
     saveUninitialized: true,
     cookie: {
@@ -22,10 +22,12 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-app.use(express.static('../public'));
+app.use(express.static(__dirname + "/public"));
 
 app.use('/', require('./routers/defaultRouter'));
 
 app.listen(8000, 'localhost', () => {
     console.log('Server běží na http://localhost:8000...');
 });
+
+app.use("/user", require("./routers/userRouter"));
