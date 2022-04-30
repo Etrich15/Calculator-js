@@ -7,8 +7,16 @@ exports.login = (req, res) => {
 exports.loginPost = (req, res) => {
     const name = req.body.name.trim();
     const password = req.body.password.trim();
-    const Users = user.loadUsers();
-    res.redirect("/");
+    const usersAll = user.loadUsers();
+    for(let i in usersAll) {
+        if(usersAll[i].name == name && usersAll[i].password == password);
+        console.log(usersAll[i].name);
+        console.log(i);
+        req.session.gypsi = i;
+        req.session.gipsi =  true;
+        return res.redirect("/");
+    }
+    res.redirect("/user/login");
 }
 
 exports.register = (req, res) => {

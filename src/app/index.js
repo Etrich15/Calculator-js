@@ -10,16 +10,16 @@ app.set('views', 'app/views');
 
 app.use(session({
     secret: "secret",
-    resave: true,
+    resave: false,
     saveUninitialized: true,
     cookie: {
         sameSite: 'strict',
-        expires: 60000 * config.sessionTimeoutMinutes,
+        expires: 60000 * 10,
     }
 }));
 
 app.use(express.urlencoded({
-    extended: false
+    extended: true
 }));
 
 app.use(express.static(__dirname + "/public"));
