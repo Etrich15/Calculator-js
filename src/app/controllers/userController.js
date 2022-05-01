@@ -28,6 +28,7 @@ exports.loginPost = (req, res) => {
 exports.register = (req, res) => {
 
     res.render("user/register");
+    
 }
 
 exports.registerPost = (req, res) => {
